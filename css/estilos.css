@@ -3,6 +3,7 @@
     font-family: 'Playfair Display', serif;
 }
 body{
+    font-size: .8em;
     width: 100%;
     display: grid;
     grid-template-columns: 10% 80% 10%;
@@ -42,19 +43,18 @@ header{
     grid-row: 1/2;
 }
 .logo img{
-    width: 320px;
+    width: 280px;
   
 }
 .michelin{
-    width: 10%;
+    
     grid-area: mi;
     grid-column: 1/2;
     grid-row: 2/3;
-    transform: translate(3em, -4.5em);
+    transform: translate(3em, -6em);
 }
 .michelin img{
     width: 200px;
-   
    
 }
 .covid{
@@ -62,44 +62,46 @@ header{
     grid-area: c;
     grid-column: 3/4;
     grid-row: 2/3;
-    transform: translate(2em,-8em ); 
+    transform: translate(-1em,-7em ); 
 }
 .covid img{
     width: 120px;
 }    
+
+/* area donde va el salmon posicionado con sticky*/
 .sticky{
    width: 300px;
    height: 300px;
     position:sticky;
     bottom: 18em;
-    transform: translate(100em,4em );
+    transform: translate(80.4em,4em );
     z-index: 999;
     
 }
 .salmon{
-    width:46px;
-    height: 180px;    
+    width:30px;
+    height: 130px;    
     background-image: linear-gradient(to bottom, #FB6920, #FAC7A0, #FB6920);
     box-shadow: 0px 0px 6px gray;
-    border-top-left-radius: 30%;
-    border-bottom-left-radius: 30%;
+    border-top-left-radius: 40%;
+    border-bottom-left-radius: 40%;
     transform: translate(15.9em, -2em);
     visibility: visible;
     
     
 }
 .salmon + img{
-    width: 220px;
-    transform: translate(4em,-12em);
+    width: 160px;
+    transform: translate(7em,-9.5em);
     box-shadow: 0px 0px 6px gray;
     border-radius: 10% 0 0 30%;
     visibility: hidden; 
 }
+/* fin area sticky */
 
-
+/* Barra de navegacion */
 nav{
     height: 60px;
-   
     background-image: linear-gradient(to right, #6c3122,#fdf6da,#6c3122);
     box-shadow: 0px 0px 8px gray;
     display: flex;
@@ -113,7 +115,7 @@ nav > ul> li{
     list-style: none;
     padding-right: 6em;
     font-weight: bold;
-    font-size: .9em;
+   
     
 }
 a{
@@ -123,16 +125,18 @@ a{
 
 .redes{
     grid-area: r;
-    padding: 20px 0 0 60px;
+    padding: 40px 0 0 60px;
     display: flex;
     justify-content: space-between;
     align-items:flex-start;
- 
-    
-    }
+}
 .redes span {
-    letter-spacing: 0.5em;
-  
+    letter-spacing: 0.2em;
+    font-size: 1.5em;
+    
+}
+.fab:hover{
+opacity: .5;
 }
 
 h3{
@@ -163,14 +167,14 @@ h3{
 
 main{
     grid-area: m;
+    
   
-
 }
 h1{  grid-area: h1;
     text-align: center;
-    margin: 100px 0 80px 0;
+    margin: 5% 0 80px 0;
     color:#4582B4;
-    font-size: 1.7em;
+    font-size: 1.5em;
    
 }
 h2{
@@ -192,25 +196,23 @@ h2{
 }
 
 .ppal{
-    height: 260px;
     grid-area: p;
-    margin: 1% 0 0 3%;
-    line-height: 1.5em;
-
-    display: flex;
-    justify-content:space-evenly;
-    flex-wrap: wrap;
-    
-    
-   
+    margin: 4% 0 6% 1%;
+    line-height: 1.5em; 
 }
 .ppal > cite{
+    
     border-left: 4px solid #4582B4;
     padding-left: 2em;
+    width: 78%;
+    line-height: 2em;
 } 
 .ppal > p{
         color: gray;
-        transform: translate(28em, 2em);
+        transform: translate(32em, 2em);
+}
+.ppal + hr{
+    width: 40%;
 }
 .entrega{
    
@@ -227,6 +229,7 @@ h2{
 .sugerencias{
     grid-area: s;
     height: 600px;
+    background-color: beige;
 }
 
 section{
@@ -245,7 +248,7 @@ section{
 
 /* Pie de página */
 footer{
-    width: 1900px;
+    width: 1262px;
     padding: 4em 0 0 2em;
     grid-area: ft;
     background-color: #2e2e2e;
