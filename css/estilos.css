@@ -122,7 +122,9 @@ a{
     text-decoration: none;
     color: black;
 }
-
+a:hover{
+    text-decoration: underline;
+}
 .redes{
     grid-area: r;
     padding: 40px 0 0 60px;
@@ -194,7 +196,11 @@ h2{
     box-shadow: 0 0 14px black inset;
  
 }
-
+section{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
 .ppal{
     grid-area: p;
     margin: 4% 0 6% 1%;
@@ -209,22 +215,35 @@ h2{
 } 
 .ppal > p{
         color: gray;
-        transform: translate(32em, 2em);
+        transform: translate(30em, 1em);
 }
 .ppal + hr{
-    width: 40%;
+    width: 30%;
+    height: 4px;
+    background-color: black;
+    margin: 0 auto 2% auto;
 }
-.entrega{
-   
-    height: 300px;
-    grid-area: e;
-    background-color: blueviolet;
-    align-items: center;
-   
-}
-.entrega >  p{
-   width: 51%;
 
+.entrega{
+    width: 80%;
+    grid-area: e;
+    margin: 3% auto;
+    align-items: center;
+    
+}
+.entrega > div > p{
+    margin-top: 4%;
+    font-size: .8em;
+}
+
+.entrega > div{
+   width: 61%;
+   
+    
+}
+.entrega  img{
+    width: 260px;
+    box-shadow: 0 0 6px black;
 }
 .sugerencias{
     grid-area: s;
@@ -232,14 +251,8 @@ h2{
     background-color: beige;
 }
 
-section{
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-.entrega > img{
-    width: 360px;
-}
+
+
 .sugerencias > div > img{
     width: 250px;
     
