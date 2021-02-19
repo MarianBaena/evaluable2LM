@@ -74,8 +74,9 @@ header{
    height: 300px;
     position:sticky;
     bottom: 18em;
-    transform: translate(80.4em,4em );
+    transform: translate(75em,-2em );
     z-index: 999;
+    
     
 }
 .salmon{
@@ -85,17 +86,28 @@ header{
     box-shadow: 0px 0px 6px gray;
     border-top-left-radius: 40%;
     border-bottom-left-radius: 40%;
-    transform: translate(15.9em, -2em);
+    transform: translate(21em, -2em);
     visibility: visible;
     
     
 }
 .salmon + img{
     width: 160px;
-    transform: translate(7em,-9.5em);
+    transform: translate(10em,-11em);
     box-shadow: 0px 0px 6px gray;
     border-radius: 10% 0 0 30%;
-    visibility: hidden; 
+    visibility: ; 
+}
+@media only screen and (min-width: 1900px) {
+    .sticky{
+        transform: translate(-125em,-1em );
+    }
+    .salmon{
+        transform: translate(21.1em, -2em);
+    }
+    .salmon + img{
+        transform: translate(10em,-11em);
+    }
 }
 /* fin area sticky */
 
@@ -246,12 +258,11 @@ section{
     box-shadow: 0 0 6px black;
 }
 .sugerencias{
+    width: 80%;
     grid-area: s;
     height: 600px;
     background-color: beige;
 }
-
-
 
 .sugerencias > div > img{
     width: 250px;
@@ -261,7 +272,7 @@ section{
 
 /* Pie de página */
 footer{
-    width: 1262px;
+    width: 1260px;
     padding: 4em 0 0 2em;
     grid-area: ft;
     background-color: #2e2e2e;
