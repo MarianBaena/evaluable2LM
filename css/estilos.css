@@ -2,26 +2,23 @@
     box-sizing: border-box;
     font-family: 'Playfair Display', serif;
 }
+
+/* En el body se define la estructura de la pagina con grid: */
 body{
-    font-size: .8em;
     width: 100%;
     display: grid;
     grid-template-columns: 10% 80% 10%;
-    
     grid-template-areas: 'h h h'
                          'h h h'
                          'm m m'
                          'm m m'
+                         'm m m'                                 
                          'm m m'
-                         'm m m'
-                         'm m m'
-                         'm m m'
-                         'm m m'
-                         'ft ft ft'
-                         'ft ft ft';
+                         'f f f';
     
 }
 
+/* Cabecera dela pagina, desde el logo hasta los iconos y tel. reserva */
 header{
         grid-area: h;
         display: grid;
@@ -34,24 +31,27 @@ header{
    
 }
 .logo{
-   
-    grid-area: l;
+       grid-area: l;
     display: flex;
     justify-content: center;
     align-items: center;
     grid-column: 1/4;
     grid-row: 1/2;
+    
 }
 .logo img{
-    width: 280px;
-  
+    width: 290px;
+    transition: 2s;
+}
+.logo img:hover{
+    opacity: .5;
+    transform: rotate(-20deg) scale(120%);
 }
 .michelin{
-    
     grid-area: mi;
     grid-column: 1/2;
     grid-row: 2/3;
-    transform: translate(3em, -6em);
+    transform: translate(3em, -5em);
 }
 .michelin img{
     width: 200px;
@@ -65,50 +65,45 @@ header{
     transform: translate(-1em,-7em ); 
 }
 .covid img{
-    width: 120px;
+    width: 140px;
 }    
 
 /* area donde va el salmon posicionado con sticky*/
 .sticky{
-   width: 300px;
-   height: 300px;
+    width: 300px;
+    height: 300px;
     position:sticky;
     bottom: 18em;
-    transform: translate(75em,-2em );
-    z-index: 999;
-    
+    transform: translate(1603px,-320px);
+    z-index: 90;
     
 }
 .salmon{
     width:30px;
     height: 130px;    
+    z-index: 99;
     background-image: linear-gradient(to bottom, #FB6920, #FAC7A0, #FB6920);
     box-shadow: 0px 0px 6px gray;
-    border-top-left-radius: 40%;
-    border-bottom-left-radius: 40%;
-    transform: translate(21em, -2em);
-    visibility: visible;
-    
-    
+    border-radius: 30% 0 0 30%;
+    position: relative;
+    left:90%;
+    transition: scale 2s;
+}
+.salmon:hover{
+    transform: scaleX(150%);
+    opacity: .4;
 }
 .salmon + img{
     width: 160px;
-    transform: translate(10em,-11em);
+    z-index: 95;
+     position: relative;
+     top:-40%;
+     left:40%;
     box-shadow: 0px 0px 6px gray;
     border-radius: 10% 0 0 30%;
-    visibility: ; 
+    visibility: hidden; 
 }
-@media only screen and (min-width: 1900px) {
-    .sticky{
-        transform: translate(-125em,-1em );
-    }
-    .salmon{
-        transform: translate(21.1em, -2em);
-    }
-    .salmon + img{
-        transform: translate(10em,-11em);
-    }
-}
+
 /* fin area sticky */
 
 /* Barra de navegacion */
@@ -120,15 +115,13 @@ nav{
     justify-content: center;
     align-items: center;
     grid-area: n;
-   
+
 }
 nav > ul> li{
     display: inline-block;
     list-style: none;
     padding-right: 6em;
     font-weight: bold;
-   
-    
 }
 a{
     text-decoration: none;
@@ -140,29 +133,16 @@ a:hover{
 .redes{
     grid-area: r;
     padding: 40px 0 0 60px;
+    margin-right:3em;  
     display: flex;
     justify-content: space-between;
     align-items:flex-start;
 }
 .redes span {
-    letter-spacing: 0.2em;
-    font-size: 1.5em;
-    
-}
-.fab:hover{
-opacity: .5;
+    letter-spacing: 0.3em;
+    font-size: 1.2em;
 }
 
-h3{
-    text-align: center;
-    color:#fba963;
-    font-size: .9em;
-    margin:0 40px 20px 0;
-    
-}
-::first-letter{
-    font-size: 1.3em;
-}
 .fa-twitter{
     color:#00ACEE;
 }
@@ -178,28 +158,35 @@ h3{
 .fa-google-plus-g{
     color:#D44837;
 }
+.fab:hover{
+opacity: .5;
+}
+
+h3{
+    color:#fba963;  
+}
+::first-letter{
+    font-size: 1.3em;
+}
 
 main{
     grid-area: m;
-    
-  
+    grid-column: 1/4;
+    grid-row: 3/7;
 }
-h1{  grid-area: h1;
+h1{  
     text-align: center;
     margin: 5% 0 80px 0;
     color:#4582B4;
-    font-size: 1.5em;
-   
+    font-variant: small-caps;  
 }
 h2{
     font-size: 1.2em;
     color:#4582B4;
     text-align: center;
-
 }
 .fondoindex{
-    border-top: 2px double gray;
-    grid-area: fn;
+    /*border-top: 4px double gray;*/
     height:260px;
     background-image: url(../img/index/fr1_nigirisushi.jpg);
     background-position: center center;
@@ -208,30 +195,29 @@ h2{
     box-shadow: 0 0 14px black inset;
  
 }
-section{
+section, footer{
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
 }
 .ppal{
-    grid-area: p;
-    margin: 4% 0 6% 1%;
-    line-height: 1.5em; 
+    margin: 4% 10% 6% 10%;
+    
 }
 .ppal > cite{
-    
-    border-left: 4px solid #4582B4;
+    line-height: 1.5em; 
+    border-left: 6px solid #4582B4;
     padding-left: 2em;
-    width: 78%;
+    width: 76%;
     line-height: 2em;
 } 
 .ppal > p{
         color: gray;
-        transform: translate(30em, 1em);
+        transform: translate(-14em, 5em)
 }
 .ppal + hr{
     width: 30%;
-    height: 4px;
+    height: 6px;
     background-color: black;
     margin: 0 auto 2% auto;
 }
@@ -245,62 +231,91 @@ section{
 }
 .entrega > div > p{
     margin-top: 4%;
-    font-size: .8em;
+    font-size: .9m;
 }
-
 .entrega > div{
-   width: 61%;
-   
-    
+   width: 64%;
 }
 .entrega  img{
-    width: 260px;
+    width: 300px;
     box-shadow: 0 0 6px black;
 }
+
 .sugerencias{
+    margin: 4em auto;
     width: 80%;
-    grid-area: s;
-    height: 600px;
-    background-color: beige;
+    text-align: center;
+    font-size: .9em;
 }
 
+.sugerencias div{
+    margin: 20px auto 10px;
+    width: 200px;
+    height: 410px;
+    border-radius:10px;
+    box-shadow: 0 0 4px gray;
+}
+.sugerencias div div{
+    width: 160px;
+    height: 320px;
+    background-size: 430px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+.tarj1{
+    background-image: url(../img/index/superBento.jpg);  
+}
+.tarj2{
+    background-image: url(../img/index/besoDragon.jpg);
+}
+.tarj3{
+    background-image: url(../img/index/bentoFantasia.png);
+}
+.tarj4{
+    background-image: url(../img/index/gambasMoriwase.jpg);
+}
+.tarj5{
+    background-image: url(../img/index/miniBento.jpg);
+}
+.tarj6{
+    background-image: url(../img/index/atunPicante.jpg);
+}
+.tarjeta img{
+width: 200px;
+}
 .sugerencias > div > img{
     width: 250px;
     
 }
 
-
 /* Pie de página */
 footer{
-    width: 1260px;
-    padding: 4em 0 0 2em;
-    grid-area: ft;
+    grid-area: f;
+    width: 1900px;
+    height: 420px;
+    padding: 6em 4em 0 4em;
+    line-height: 1.8em;
     background-color: #2e2e2e;
     color:white;
     text-align: center;
-    font-size: 0.8em;
+    font-size: .8em;
     grid-column: 1/4;
-    grid-row: 10/12;
+    grid-row: 7/8;
 }
-
 h3 span{
     color:red;
 }
-.footerppal{
-    display: flex;
-    justify-content:space-evenly;
-    flex-wrap:wrap;
-}
 .col{
-    width: 25%;
+    width: 21.5%;
 }
 .barraft{
-    width: 140px;
-    height: 1px;
+    width: 160px;
+    height: 2px;
     margin-top: 6em;
     background-color: white;
     transform:rotate(90deg)
 }
+/*
 footer :nth-child(6){
     margin: 2em 0 2em 0;
-}
+}  */
