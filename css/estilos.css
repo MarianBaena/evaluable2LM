@@ -7,7 +7,8 @@
 body{
     width: 100%;
     display: grid;
-    grid-template-columns: 10% 80% 10%;
+    grid-template-columns: minmax(0, 10%) minmax(0, 80%) minmax(0, 10%);
+    grid-template-rows: minmax(0, 10%) minmax(0, 10%) minmax(0, 10%) minmax(0, 14%) minmax(0, 15%) minmax(0, 26%) minmax(0, 15%);
     grid-template-areas: 'h h h'
                          'h h h'
                          'm m m'
@@ -15,6 +16,8 @@ body{
                          'm m m'                                 
                          'm m m'
                          'f f f';
+
+    
     
 }
 
@@ -22,12 +25,14 @@ body{
 header{
         grid-area: h;
         display: grid;
-        grid-template-columns: 10% 80% 10%;
-        grid-template-rows: 70% 10% 10% 10%;
+        grid-template-columns: minmax(0, 10%) minmax(0, 80%) minmax(0 , 10%);
+        grid-template-rows: minmax(0, 65%) minmax(0, 10%) minmax(0, 10%) minmax(0, 15%);
         grid-template-areas: 'l l l'
                              'mi c c'
                              'n n n'
                              'r r r';
+
+        overflow: hidden;
    
 }
 .logo{
@@ -77,32 +82,44 @@ header{
     transform: translate(1603px,-320px);
     z-index: 90;
     
+    
 }
 .salmon{
     width:30px;
     height: 130px;    
-    z-index: 99;
+    z-index: 95;
     background-image: linear-gradient(to bottom, #FB6920, #FAC7A0, #FB6920);
     box-shadow: 0px 0px 6px gray;
     border-radius: 30% 0 0 30%;
     position: relative;
     left:90%;
-    transition: scale 2s;
+    transition: 2s;
 }
+
 .salmon:hover{
-    transform: scaleX(150%);
+    transform: scaleX(180%);
     opacity: .4;
 }
-.salmon + img{
-    width: 160px;
-    z-index: 95;
-     position: relative;
+
+#oculto {
+    width: 200px;
+    position: relative;
      top:-40%;
-     left:40%;
+     left:35%;
+   visibility: hidden;
+   
+}
+
+#oculto img{
+    width: 160px;
+    z-index: 99;
     box-shadow: 0px 0px 6px gray;
     border-radius: 10% 0 0 30%;
-    visibility: hidden; 
+ 
 }
+#oculto:active{
+    visibility: visible;
+    }
 
 /* fin area sticky */
 
