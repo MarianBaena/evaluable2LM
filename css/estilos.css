@@ -30,7 +30,7 @@ header{
                              'n n n'
                              'r r r';
 
-       }
+}
 .logo{
        grid-area: l;
     display: flex;
@@ -70,13 +70,12 @@ header{
 }    
 
 /* area donde va el salmon posicionado con sticky*/
-.sticky {
+.fijo {
     width: 300px;
     height: 300px;
-    -moz-postion: sticky;
-    position: sticky;
-    bottom: 38em;
-    left: 100em;
+    position: fixed;
+    top: 30px;
+    right: 0%;
     z-index: 70;
 }
 .salmon{
@@ -88,9 +87,7 @@ header{
     border-radius: 30% 0 0 30%;
     position: relative;
     left:90%;
-   
 }
-
 .salmon:hover{
     transform: scaleX(1.8);
     opacity: .4;
@@ -128,7 +125,6 @@ header{
   }
 
 #oculto {
-    
     width: 200px;
     z-index: 95;
     position: relative;
@@ -154,7 +150,7 @@ display: none;
 /* Barra de navegacion */
 nav{
     height: 60px;
-    background-image: linear-gradient(to right, #6c3122,#fdf6da,#6c3122);
+    background-image: linear-gradient(to right, #6c3122,ivory,#6c3122);
     box-shadow: 0px 0px 8px gray;
     display: flex;
     justify-content: center;
@@ -303,6 +299,11 @@ h2{
     border-radius:10px;
     box-shadow: 0 0 4px gray;
 }
+.sugerencias div:hover{
+    opacity: .6;
+    transition: 2s;
+}
+
 .sugerencias div div{
     width: 160px;
     height: 320px;
@@ -313,6 +314,7 @@ h2{
 .tarj1{
     background-image: url(../img/index/superBento.jpg);  
 }
+
 .tarj2{
     background-image: url(../img/index/besoDragon.jpg);
 }
@@ -328,6 +330,9 @@ h2{
 .tarj6{
     background-image: url(../img/index/atunPicante.jpg);
 }
+
+/* estilos que aplican a equipo.html */
+
 
 
 /* Pie de página */
