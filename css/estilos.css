@@ -12,13 +12,10 @@ body{
     grid-template-areas: 'h h h'
                          'h h h'
                          'm m m'
-                         'm m m'
-                         'm m m'                                 
-                         'm m m'
+                     
                          'f f f';
 
-    
-    
+   
 }
 
 /* Cabecera dela pagina, desde el logo hasta los iconos y tel. reserva */
@@ -50,13 +47,13 @@ header{
 }
 .logo img:hover{
     opacity: .5;
-    transform: rotate(-20deg) scale(120%);
+    transform: rotate(-20deg) scale(1.4);
 }
 .michelin{
     grid-area: mi;
     grid-column: 1/2;
     grid-row: 2/3;
-    transform: translate(3em, -5em);
+    transform: translate(3em, -4.9em);
 }
 .michelin img{
     width: 200px;
@@ -78,51 +75,78 @@ header{
     width: 300px;
     height: 300px;
     position: sticky;
-    bottom: 42em;
+    bottom: 38em;
     left: 100em;
-    /* transform: translate(1603px,-320px); */
-    /* z-index: 90; */
-    right: 0;
-    padding-top: 30px;
     
 }
 .salmon{
     width:30px;
     height: 130px;    
-    z-index: 95;
+    z-index: 99;
     background-image: linear-gradient(to bottom, #FB6920, #FAC7A0, #FB6920);
     box-shadow: 0px 0px 6px gray;
     border-radius: 30% 0 0 30%;
     position: relative;
     left:90%;
-    transition: 2s;
+   
 }
 
 .salmon:hover{
-    transform: scaleX(180%);
+    transform: scaleX(1.8);
     opacity: .4;
+    transition: 2s;
 }
+.salmon:hover ~ .tooltip{
+    opacity: 30;
+    transition: 2s;
+}
+.tooltip{
+    width: 150px;
+    background-color: black;
+    border-radius: 1em;
+    position: relative;
+    bottom: 8em;
+    left: 7em;
+    padding: .9em;
+    color: white;
+    font-size: .8em;
+    text-align: center;
+    opacity: 0;
+}
+.tooltip::after {
+    border-left: 15px solid black;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    width: 0;
+    height: 0;
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 1.4em;
+    left: 11.2em;
+  }
 
 #oculto {
+    
     width: 200px;
-    z-index: 99;
+    z-index: 95;
     position: relative;
-     top:-42%;
+     top:-20%;
      left:39%;
-   opacity: 0;
+   visibility: hidden;
    
 }
 #oculto img{
-    width: 160px;
-   
+    width: 180px;
     box-shadow: 0px 0px 6px gray;
     border-radius: 10% 0 0 30%;
-    transition: opacity 2s;
- 
-}
-#oculto:active{
-    opacity: 100;
+  }
+.salmon:active ~ #oculto{
+    visibility:visible;
     }
+.salmon:active {
+display: none;
+}
 
 /* fin area sticky */
 
@@ -215,7 +239,7 @@ h2{
     box-shadow: 0 0 14px black inset;
  
 }
-section, footer{
+.centrado, footer{
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -251,7 +275,7 @@ section, footer{
 }
 .entrega > div > p{
     margin-top: 4%;
-    font-size: .9m;
+    font-size: .9em;
 }
 .entrega > div{
    width: 64%;
