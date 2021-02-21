@@ -4,18 +4,19 @@
 }
 
 /* En el body se define la estructura de la pagina con grid: */
-body{
+.grid{
     width: 100%;
+    max-width: 1900px;
     display: grid;
     grid-template-columns: minmax(0, 10%) minmax(0, 80%) minmax(0, 10%);
-    grid-template-rows: minmax(0, 10%) minmax(0, 10%) minmax(0, 10%) minmax(0, 14%) minmax(0, 15%) minmax(0, 26%) minmax(0, 15%);
     grid-template-areas: 'h h h'
-                         'h h h'
                          'm m m'
-                     
-                         'f f f';
-
-   
+                         'm m m'
+                         'm m m'
+                         'f f f';         
+                        
+ max-height: 2550px;
+ 
 }
 
 /* Cabecera dela pagina, desde el logo hasta los iconos y tel. reserva */
@@ -29,9 +30,7 @@ header{
                              'n n n'
                              'r r r';
 
-        overflow: hidden;
-   
-}
+       }
 .logo{
        grid-area: l;
     display: flex;
@@ -74,10 +73,11 @@ header{
 .sticky {
     width: 300px;
     height: 300px;
+    -moz-postion: sticky;
     position: sticky;
     bottom: 38em;
     left: 100em;
-    
+    z-index: 70;
 }
 .salmon{
     width:30px;
@@ -96,7 +96,7 @@ header{
     opacity: .4;
     transition: 2s;
 }
-.salmon:hover ~ .tooltip{
+.salmon:hover + .tooltip{
     opacity: 30;
     transition: 2s;
 }
@@ -112,6 +112,7 @@ header{
     font-size: .8em;
     text-align: center;
     opacity: 0;
+    z-index: 80;;
 }
 .tooltip::after {
     border-left: 15px solid black;
@@ -141,7 +142,7 @@ header{
     box-shadow: 0px 0px 6px gray;
     border-radius: 10% 0 0 30%;
   }
-.salmon:active ~ #oculto{
+.salmon:active + .tooltip + #oculto{
     visibility:visible;
     }
 .salmon:active {
@@ -176,7 +177,7 @@ a:hover{
 }
 .redes{
     grid-area: r;
-    padding: 40px 0 0 60px;
+    padding: 40px 0 0 30px;
     margin-right:3em;  
     display: flex;
     justify-content: space-between;
@@ -209,6 +210,7 @@ opacity: .5;
 h3{
     color:#fba963;  
 }
+
 ::first-letter{
     font-size: 1.3em;
 }
@@ -216,7 +218,8 @@ h3{
 main{
     grid-area: m;
     grid-column: 1/4;
-    grid-row: 3/7;
+    
+
 }
 h1{  
     text-align: center;
@@ -231,6 +234,7 @@ h2{
 }
 .fondoindex{
     /*border-top: 4px double gray;*/
+    margin-top: 2px;
     height:260px;
     background-image: url(../img/index/fr1_nigirisushi.jpg);
     background-position: center center;
@@ -324,13 +328,7 @@ h2{
 .tarj6{
     background-image: url(../img/index/atunPicante.jpg);
 }
-.tarjeta img{
-width: 200px;
-}
-.sugerencias > div > img{
-    width: 250px;
-    
-}
+
 
 /* Pie de página */
 footer{
@@ -343,8 +341,9 @@ footer{
     color:white;
     text-align: center;
     font-size: .8em;
-    grid-column: 1/4;
-    grid-row: 7/8;
+    /*
+    grid-column: 1/4;  */
+    
 }
 h3 span{
     color:red;
@@ -363,3 +362,4 @@ h3 span{
 footer :nth-child(6){
     margin: 2em 0 2em 0;
 }  */
+
