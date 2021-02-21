@@ -6,7 +6,7 @@
 /* En el body se define la estructura de la pagina con grid: */
 .grid{
     width: 100%;
-    max-width: 1900px;
+    /* max-width: 1900px; */
     display: grid;
     grid-template-columns: minmax(0, 10%) minmax(0, 80%) minmax(0, 10%);
     grid-template-areas: 'h h h'
