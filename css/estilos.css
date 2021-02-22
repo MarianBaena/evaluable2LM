@@ -69,7 +69,7 @@ header{
     width: 140px;
 }    
 
-/* area donde va el salmon posicionado con sticky*/
+/* area donde va el salmon posicionado con fixed*/
 .fijo {
     width: 300px;
     height: 300px;
@@ -129,23 +129,25 @@ header{
     z-index: 95;
     position: relative;
      top:-20%;
-     left:39%;
+     left:40%;
    visibility: hidden;
    
 }
 #oculto img{
-    width: 180px;
+    width: 190px;
     box-shadow: 0px 0px 6px gray;
     border-radius: 10% 0 0 30%;
+   
   }
 .salmon:active + .tooltip + #oculto{
     visibility:visible;
+    transform: translateX(-10px);
+    transition: 1s;
     }
-.salmon:active {
+.salmon:active  {
 display: none;
 }
-
-/* fin area sticky */
+/* fin area salmon fijo */
 
 /* Barra de navegacion */
 nav{
@@ -170,8 +172,10 @@ a{
     text-decoration: none;
     color: black;
 }
-a:hover{
+nav a:hover{
     text-decoration: underline;
+    font-size: 1.2em;
+    transition: 1s;
 }
 .redes{
     grid-area: r;
@@ -272,7 +276,7 @@ cite{
 }
 
 .entrega{
-    width: 80%;
+    width: 72%;
     grid-area: e;
     margin: 3% auto;
     align-items: center;
@@ -446,6 +450,11 @@ cite{
     background-image: url("../img/equipo/andrewNishimura.jpg");
     background-size: 250%;
     background-position: 70% 20%;
+    position:relative;
+    
+}
+.c1:hover{
+    animation: salto 3s infinite ease-in-out;
 }
 .c2{
     grid-area: c2;
@@ -480,6 +489,10 @@ cite{
     background-size: 280px;
     background-position: 50% 20%;
     
+}
+@keyframes salto{
+    from {top:0px;}
+    to {top: 100px;}
 }
 .t1{
     grid-area: t1;
@@ -645,25 +658,19 @@ footer{
     color:white;
     text-align: center;
     font-size: .8em;
-    /*
-    grid-column: 1/4;  */
-    
 }
 h3 span{
     color:red;
 }
 .col{
-    width: 21.5%;
+    width: 21.3%;
 }
 .barraft{
     width: 160px;
-    height: 2px;
+    height: 3px;
     margin-top: 6em;
     background-color: white;
     transform:rotate(90deg)
 }
-/*
-footer :nth-child(6){
-    margin: 2em 0 2em 0;
-}  */
+/* Fin footer */
 
