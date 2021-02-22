@@ -158,9 +158,11 @@ nav{
     grid-area: n;
 
 }
+ul{
+    list-style-type: none;
+}
 nav > ul> li{
     display: inline-block;
-    list-style: none;
     padding-right: 6em;
     font-weight: bold;
 }
@@ -227,17 +229,17 @@ h2{
     font-size: 1.2em;
     color:#4582B4;
     text-align: center;
+    margin-bottom: 2em;
 }
-.fondoindex{
-    /*border-top: 4px double gray;*/
-    margin-top: 2px;
+.fondoindex, .fondoLoc{
     height:260px;
-    background-image: url(../img/index/fr1_nigirisushi.jpg);
     background-position: center center;
     background-attachment: fixed;
     background-size: cover;
     box-shadow: 0 0 14px black inset;
- 
+}
+.fondoindex{
+    background-image: url(../img/index/fr1_nigirisushi.jpg);
 }
 .centrado, footer{
     display: flex;
@@ -535,7 +537,102 @@ cite{
     margin-left: 2em;
 }  
 
+/*fin seccion citas del equipo */
 
+/*carta  */
+
+h4{
+    color: #dc2f53;
+}
+.fondo{
+    background-image: url(../img/carta/sushitoRestaurant.jpg);
+    background-position: 50%, 50%;
+    background-size: 2100px;
+    position: relative;
+}
+.fondo:before {
+	content:'';
+	position: absolute;
+    top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: white;
+    opacity: .9;
+}
+.menu{
+    position: relative;
+    margin: 0 auto 8em auto;
+    border-top:1px solid black;
+    border-bottom:1px solid black;
+    text-align: center;
+    display: flex;
+     
+}
+
+.menuDiario, .menuFestivos{
+    line-height: 4em;
+    margin: 8em auto 4em auto;
+    min-width: 25%;
+    flex-direction: column;
+    flex-wrap:wrap;
+    justify-content: space-around;
+}
+/* Fin carta */
+
+/* Localizacion */
+
+.FranjaF{
+    width: 1900px;
+
+}
+.externo{
+    margin: 8em 0 6em 0;
+    display: flex;
+    justify-content: center;
+}
+
+iframe{
+    border-radius: 5% 50% 5% 50%;
+    box-shadow: 0 0 8px black;
+    
+}
+.contacto{
+    width: 600px;
+    padding: 6em 1em 2em 1em;
+    margin-left: 8em;
+    border: 2px solid lightgray;
+    border-radius: 2em;
+    line-height: 2em;
+    
+}
+.contacto ul li:first-child, .contacto ul li:nth-child(4){
+    list-style-type: disc;
+    font-weight: bolder;
+
+}
+.contacto hr{
+    margin: 1em auto 1em auto;
+    height: 4px;
+    width: 90%;
+    background-color: gray;
+}
+.contacto p{
+    padding: 0 1em 0 1em;
+    color: gray;
+    font-size: .9em;
+    font-style: italic;
+    margin: 0 auto 1em auto;
+    
+}
+.contacto p span{
+    font-weight: bolder;
+}
+.fondoLoc{    
+
+    background-image: url(../img/local/fr2_sushitable.jpg);
+    margin-bottom: 8em;
+}
 
 /* Pie de página */
 footer{
