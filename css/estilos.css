@@ -484,13 +484,16 @@ cite{
     background-image: url("../img/equipo/joeNishimura.jpg");
     background-size: 280px;
     background-position: 50% 20%;
-    
 }
 
-@keyframes salto{
-    0% {top:-10px;}
-    50% {top: 0px;}
-    100% {top: 10px;}
+.c1:hover, .c2:hover, .c3:hover,.c4:hover, .c5:hover{
+    position: relative;
+    animation: salto .3s ease-in-out infinite alternate;
+}
+
+@keyframes salto {
+    from {top:-5px;}
+    to {top: 5px;}
 }
 .t1{
     grid-area: t1;
