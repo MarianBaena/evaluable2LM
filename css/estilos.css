@@ -265,7 +265,7 @@ cite{
 }
 .ppal > p{
         color: gray;
-       text-align:right;
+         transform: translate(-10em, 4em)
 }
 .ppal + hr{
     width: 30%;
