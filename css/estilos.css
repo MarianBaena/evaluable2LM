@@ -4,11 +4,10 @@
 }
 
 /* En el body se define la estructura de la pagina con grid: */
+
 .grid{
-    width: 100%;
-    /* max-width: 1900px; */
     display: grid;
-    grid-template-columns: minmax(0, 10%) minmax(0, 80%) minmax(0, 10%);
+    grid-template-columns: 10% 80% 10%;
     grid-template-areas: 'h h h'
                          'm m m'
                          'm m m'
@@ -23,8 +22,8 @@
 header{
         grid-area: h;
         display: grid;
-        grid-template-columns: minmax(0, 10%) minmax(0, 80%) minmax(0 , 10%);
-        grid-template-rows: minmax(0, 65%) minmax(0, 10%) minmax(0, 10%) minmax(0, 15%);
+        grid-template-columns:  10% 80% 10%;
+        grid-template-rows: 65%  10% 10% 15%;
         grid-template-areas: 'l l l'
                              'mi c c'
                              'n n n'
@@ -32,7 +31,7 @@ header{
 
 }
 .logo{
-       grid-area: l;
+    grid-area: l;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -94,7 +93,7 @@ header{
     transition: 2s;
 }
 .salmon:hover + .tooltip{
-    opacity: 30;
+    opacity: 30%;
     transition: 2s;
 }
 .tooltip{
@@ -179,7 +178,7 @@ nav a:hover{
 }
 .redes{
     grid-area: r;
-    padding: 40px 0 0 30px;
+    padding: 2.5em 0 0 2em;
     margin-right:3em;  
     display: flex;
     justify-content: space-between;
@@ -276,21 +275,21 @@ cite{
 }
 
 .entrega{
-    width: 72%;
+    width: 73%;
     grid-area: e;
-    margin: 3% auto;
+    margin: 4% auto;
     align-items: center;
     
 }
 .entrega > div > p{
-    margin-top: 4%;
+    margin: 4% 2% 8% 0;
     font-size: .9em;
 }
 .entrega > div{
    width: 64%;
 }
 .entrega  img{
-    width: 300px;
+    width: 340px;
     box-shadow: 0 0 6px black;
 }
 
@@ -316,7 +315,7 @@ cite{
 .sugerencias div div{
     width: 160px;
     height: 320px;
-    background-size: 430px;
+    background-size: 480px;
     background-position: 50% 50%;
     background-repeat: no-repeat;
 }
@@ -450,12 +449,9 @@ cite{
     background-image: url("../img/equipo/andrewNishimura.jpg");
     background-size: 250%;
     background-position: 70% 20%;
-    position:relative;
     
 }
-.c1:hover{
-    animation: salto 3s infinite ease-in-out;
-}
+
 .c2{
     grid-area: c2;
     grid-column: 3/4;
@@ -490,9 +486,11 @@ cite{
     background-position: 50% 20%;
     
 }
+
 @keyframes salto{
-    from {top:0px;}
-    to {top: 100px;}
+    0% {top:-10px;}
+    50% {top: 0px;}
+    100% {top: 10px;}
 }
 .t1{
     grid-area: t1;
@@ -533,7 +531,7 @@ cite{
 .miembros p{
     color: gray;
     text-align: right;
-    margin-top: 1.4em 0 1.2em 0;
+    margin: 1.4em 0 1.2em 0;
 }
 .cita{
     width: 94%;
@@ -580,6 +578,7 @@ h4{
     border-bottom:1px solid black;
     text-align: center;
     display: flex;
+    flex-wrap:wrap;
      
 }
 
@@ -595,28 +594,27 @@ h4{
 
 /* Localizacion */
 
-.FranjaF{
-    width: 1900px;
 
-}
-.externo{
-    margin: 8em 0 6em 0;
-    display: flex;
-    justify-content: center;
+.franjaF{
+    width:1900px;
+    overflow: hidden;
 }
 
 iframe{
+    margin: 0 0 8em 22em;
     border-radius: 5% 50% 5% 50%;
     box-shadow: 0 0 8px black;
+    float: left;
     
 }
 .contacto{
     width: 600px;
-    padding: 6em 1em 2em 1em;
-    margin-left: 8em;
+    padding: 90px 10px 10px 10px;
+    margin-left: 100px;
     border: 2px solid lightgray;
     border-radius: 2em;
     line-height: 2em;
+    float: left;
     
 }
 .contacto ul li:first-child, .contacto ul li:nth-child(4){
@@ -631,18 +629,16 @@ iframe{
     background-color: gray;
 }
 .contacto p{
-    padding: 0 1em 0 1em;
     color: gray;
     font-size: .9em;
     font-style: italic;
-    margin: 0 auto 1em auto;
-    
+    margin: -14px 10px 10px 40px;
 }
 .contacto p span{
     font-weight: bolder;
 }
 .fondoLoc{    
-
+    clear: left;
     background-image: url(../img/local/fr2_sushitable.jpg);
     margin-bottom: 8em;
 }
@@ -674,3 +670,73 @@ h3 span{
 }
 /* Fin footer */
 
+/*media query  */
+
+@media screen and (max-width: 800px) {
+    header{
+        height: 400px;
+    }
+    nav{
+        height: max-content;
+        flex-direction: column;
+        align-items: flex-start;
+        background-image: linear-gradient(to right,ivory,#6c3122);
+        line-height: 6em;
+    }
+
+    nav > ul > li{
+        display: block;
+       
+    }
+    .redes{
+        margin-top: 22em;
+        justify-content: space-evenly;
+    }
+    h1{
+        margin-top: 14em;
+    }
+
+    .logo img{
+        position:relative;
+        z-index: 40;
+        left: -3.5em;
+        top: -2em;
+    }
+    .logo img:hover{
+        opacity: .5;
+        transform: rotate(-10deg) scale(1.1);
+    }
+    .michelin img{
+        position: relative;
+        top:-.4em;
+    }
+    .covid{
+        transform: translate(-8em,-6.6em ); 
+    }
+    .ppal > p{
+        transform: none;
+    }
+    .sugerencias div{
+        font-size: .9em;
+        line-height: .8em;
+        margin: 12px auto 10px;
+        width: 300px;
+        height: 355px;
+        border-radius:10px;
+        box-shadow: 0 0 4px gray;
+    }
+        .sugerencias div div{
+        width: 280px;
+        height: 290px;
+    }
+        .miembros{
+            font-size: .7em;
+        }
+        .miembros cite{
+            line-height: 1.4em;
+        }
+        .miembros p{
+            margin-top: 2em;
+        }
+
+  }
