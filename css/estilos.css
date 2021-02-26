@@ -19,7 +19,7 @@
 }
 
 /* Cabecera dela pagina, desde el logo hasta los iconos y tel. reserva */
-header{
+header{ 
         grid-area: h;
         display: grid;
         grid-template-columns:  10% 80% 10%;
@@ -93,7 +93,7 @@ header{
     transition: 2s;
 }
 .salmon:hover + .tooltip{
-    opacity: 30%;
+    opacity: 70%;
     transition: 2s;
 }
 .tooltip{
