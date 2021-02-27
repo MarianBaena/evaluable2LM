@@ -41,11 +41,11 @@ header{
 }
 .logo img{
     width: 290px;
-    transition: 2s;
 }
 .logo img:hover{
     opacity: .5;
     transform: rotate(-20deg) scale(1.4);
+    transition: 2s;
 }
 .michelin{
     grid-area: mi;
@@ -528,7 +528,6 @@ cite{
     width: 150px;
     border-radius: 50%;
     box-shadow: 0 0 14px black inset;
-    background-color:red;
     margin-top: 1em;
     }
     
@@ -556,16 +555,22 @@ cite{
 
 /*carta  */
 
-h4{
+.menu li:nth-child(1), .menu li:nth-child(5), .menu li:nth-child(9){
     color: #dc2f53;
+    font-weight: bold;
 }
-.fondo{
+.menu{
+    margin: 0 auto 8em auto;
     background-image: url(../img/carta/sushitoRestaurant.jpg);
     background-position: 50%, 50%;
     background-size: 2100px;
-    position: relative;
+    position: relative;   
+    border-top:1px solid black;
+    border-bottom:1px solid black;
+    text-align: center;
+   
 }
-.fondo:before {
+.menu:before {
 	content:'';
 	position: absolute;
     top: 0;
@@ -575,24 +580,12 @@ h4{
 	background-color: white;
     opacity: .9;
 }
-.menu{
-    position: relative;
-    margin: 0 auto 8em auto;
-    border-top:1px solid black;
-    border-bottom:1px solid black;
-    text-align: center;
-    display: flex;
-    flex-wrap:wrap;
-     
-}
 
-.menuDiario, .menuFestivos{
+.menu section{
     line-height: 4em;
     margin: 8em auto 4em auto;
-    min-width: 25%;
-    flex-direction: column;
-    flex-wrap:wrap;
-    justify-content: space-around;
+    min-width: 25%;    
+    z-index: 60;
 }
 /* Fin carta */
 
